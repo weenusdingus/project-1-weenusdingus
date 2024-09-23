@@ -191,42 +191,42 @@ class Schemes(FiniteStateMachine):
     @staticmethod
     def s_0(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "S":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Schemes.s_1, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
         
     @staticmethod
     def s_1(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "c":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Schemes.s_2, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
         
     @staticmethod
     def s_2(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "h":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Schemes.s_3, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
         
     @staticmethod
     def s_3(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "e":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Schemes.s_4, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
     
     @staticmethod
     def s_4(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "m":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Schemes.s_5, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
     
     @staticmethod
     def s_5(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "e":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Schemes.s_6, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
         
@@ -239,7 +239,7 @@ class Schemes(FiniteStateMachine):
         
 class Facts(FiniteStateMachine):
     def __init__(self) -> None:
-        super().__init__(Schemes.s_0)
+        super().__init__(Facts.s_0)
 
     def token(self, value: str) -> Token:
         match value:
@@ -251,28 +251,28 @@ class Facts(FiniteStateMachine):
     @staticmethod
     def s_0(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "F":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Facts.s_1, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
         
     @staticmethod
     def s_1(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "a":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Facts.s_2, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
         
     @staticmethod
     def s_2(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "c":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Facts.s_3, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
         
     @staticmethod
     def s_3(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "t":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Facts.s_4, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
     
@@ -285,7 +285,7 @@ class Facts(FiniteStateMachine):
         
 class Rules(FiniteStateMachine):
     def __init__(self) -> None:
-        super().__init__(Schemes.s_0)
+        super().__init__(Rules.s_0)
 
     def token(self, value: str) -> Token:
         match value:
@@ -297,28 +297,28 @@ class Rules(FiniteStateMachine):
     @staticmethod
     def s_0(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "R":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Rules.s_1, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
         
     @staticmethod
     def s_1(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "u":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Rules.s_2, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
         
     @staticmethod
     def s_2(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "l":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Rules.s_3, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
         
     @staticmethod
     def s_3(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "e":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Rules.s_4, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
     
@@ -331,7 +331,7 @@ class Rules(FiniteStateMachine):
         
 class Queries(FiniteStateMachine):
     def __init__(self) -> None:
-        super().__init__(Schemes.s_0)
+        super().__init__(Queries.s_0)
 
     def token(self, value: str) -> Token:
         match value:
@@ -343,42 +343,42 @@ class Queries(FiniteStateMachine):
     @staticmethod
     def s_0(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "Q":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Queries.s_1, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
         
     @staticmethod
     def s_1(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "u":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Queries.s_2, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
         
     @staticmethod
     def s_2(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "e":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Queries.s_3, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
         
     @staticmethod
     def s_3(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "r":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Queries.s_4, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
     
     @staticmethod
     def s_4(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "i":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Queries.s_5, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
     
     @staticmethod
     def s_5(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "e":
-            return FiniteStateMachine.s_accept, input_chars_read + 1
+            return Queries.s_6, input_chars_read + 1
         else:
             return FiniteStateMachine.s_reject, 0
         
@@ -540,6 +540,8 @@ class String(FiniteStateMachine):
     def s_1(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "'":
             return String.s_2, input_chars_read + 1
+        elif input_char == "":
+            return FiniteStateMachine.s_reject, 0
         else:
             return String.s_1, input_chars_read + 1
 
@@ -547,10 +549,12 @@ class String(FiniteStateMachine):
     def s_2(input_chars_read: int, input_char: str) -> StateAndOutput:
         if input_char == "'":
             return String.s_1, input_chars_read + 1
-        elif input_char == "":  
-            return FiniteStateMachine.s_reject, 0 
         else:
-            return FiniteStateMachine.s_accept, input_chars_read 
+            return FiniteStateMachine.s_accept, input_chars_read
+
+    @staticmethod
+    def s_reject(input_chars_read: int, input_char: str) -> StateAndOutput:
+        return FiniteStateMachine.s_reject, 0
         
 class Comment(FiniteStateMachine):
 
